@@ -2,62 +2,103 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Cho em nè</title>
   <style>
     body {
-      background-color: pink;
-      text-align: center;
+      margin: 0;
+      background: pink;
+      overflow: hidden;
       font-family: Arial, sans-serif;
-      padding-top: 50px;
+      text-align: center;
     }
     h1 {
-      color: white;
-      text-shadow: 2px 2px 5px black;
+      color: #fff;
+      font-size: 2em;
+      margin-top: 50px;
+      text-shadow: 2px 2px 4px #000;
     }
-    img {
+    #cat {
       width: 250px;
       border-radius: 20px;
-      margin: 20px;
+      margin: 20px auto;
+      display: block;
+      box-shadow: 0 0 15px #fff;
     }
-    .btn {
-      padding: 12px 20px;
-      font-size: 20px;
-      border: none;
-      border-radius: 12px;
-      cursor: pointer;
+    .btns {
+      margin-top: 20px;
+    }
+    button {
+      padding: 12px 24px;
+      font-size: 18px;
       margin: 10px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
     }
     #yes {
-      background-color: hotpink;
+      background-color: #ff69b4;
       color: white;
     }
     #no {
       background-color: white;
-      color: black;
+      color: #ff69b4;
       position: absolute;
+    }
+    .heart {
+      width: 20px;
+      height: 20px;
+      position: fixed;
+      animation: float 3s linear infinite;
+      color: red;
+      font-size: 20px;
+    }
+    @keyframes float {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) scale(1.5);
+        opacity: 0;
+      }
     }
   </style>
 </head>
 <body>
   <h1>Em đồng ý với anh là không buồn nữa nha 💖</h1>
-  <img src="https://raw.githubusercontent.com/dangbac45/dangbac45.github.io/main/meo.jpg" alt="Cute Cat" />
-  <br>
-  <button class="btn" id="yes">Em đồng ý 🥰</button>
-  <button class="btn" id="no">Không 😢</button>
+  <img id="cat" src="https://i.imgur.com/CiT2N6J.jpeg" alt="Cute Cat" />
+  <div class="btns">
+    <button id="yes" onclick="alert('Anh biết mà 🥺')">Em đồng ý 🥰</button>
+    <button id="no" onmouseover="moveButton()" onclick="moveButton()">Không 😢</button>
+  </div>
+
+  <audio autoplay loop>
+    <source src="https://phamvulinh18.github.io/crush4/music.mp3" type="audio/mpeg" />
+  </audio>
 
   <script>
-    const noBtn = document.getElementById('no');
-    noBtn.addEventListener('mouseover', function () {
+    function moveButton() {
+      const btn = document.getElementById('no');
       const x = Math.random() * (window.innerWidth - 100);
-      const y = Math.random() * (window.innerHeight - 50);
-      noBtn.style.left = x + 'px';
-      noBtn.style.top = y + 'px';
-    });
+      const y = Math.random() * (window.innerHeight - 100);
+      btn.style.left = `${x}px`;
+      btn.style.top = `${y}px`;
+    }
 
-    document.getElementById("yes").addEventListener("click", function() {
-      alert("Anh biết mà, iu em 💖");
-    });
+    // Tim bay
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.innerText = '💖';
+      heart.style.left = Math.random() * 100 + 'vw';
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 3000);
+    }
+    setInterval(createHeart, 300);
   </script>
 </body>
 </html>
