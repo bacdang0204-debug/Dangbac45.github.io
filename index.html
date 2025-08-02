@@ -9,26 +9,24 @@
       background-color: pink;
       text-align: center;
       font-family: Arial, sans-serif;
-      padding-top: 30px;
+      padding-top: 50px;
     }
     h1 {
       color: white;
-      text-shadow: 2px 2px 4px #00000050;
+      text-shadow: 2px 2px 5px black;
     }
     img {
-      width: 200px;
+      width: 250px;
       border-radius: 20px;
-      margin: 20px auto;
-      display: block;
+      margin: 20px;
     }
-    button {
-      font-size: 18px;
-      padding: 10px 20px;
-      margin: 10px;
+    .btn {
+      padding: 12px 20px;
+      font-size: 20px;
       border: none;
-      border-radius: 10px;
+      border-radius: 12px;
       cursor: pointer;
-      transition: 0.3s;
+      margin: 10px;
     }
     #yes {
       background-color: hotpink;
@@ -38,31 +36,27 @@
       background-color: white;
       color: black;
       position: absolute;
-      right: 10px;
-      bottom: 10px;
     }
   </style>
 </head>
 <body>
   <h1>Em đồng ý với anh là không buồn nữa nha 💖</h1>
-  <img src="https://chat.openai.com/share-image/e793eabc-82b4-41cd-8196-632b99000906" alt="Cute Cat" />
-  <br />
-  <button id="yes">Em đồng ý 🥰</button>
-  <button id="no">Không 😢</button>
+  <img src="https://raw.githubusercontent.com/dangbac45/dangbac45.github.io/main/meo.jpg" alt="Cute Cat" />
+  <br>
+  <button class="btn" id="yes">Em đồng ý 🥰</button>
+  <button class="btn" id="no">Không 😢</button>
 
   <script>
-    const noBtn = document.getElementById("no");
-    const yesBtn = document.getElementById("yes");
-
-    noBtn.addEventListener("mouseover", () => {
-      const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
-      const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
-      noBtn.style.left = x + "px";
-      noBtn.style.top = y + "px";
+    const noBtn = document.getElementById('no');
+    noBtn.addEventListener('mouseover', function () {
+      const x = Math.random() * (window.innerWidth - 100);
+      const y = Math.random() * (window.innerHeight - 50);
+      noBtn.style.left = x + 'px';
+      noBtn.style.top = y + 'px';
     });
 
-    yesBtn.addEventListener("click", () => {
-      alert("Yêu em nhiều lắm luôn á 💖🥺");
+    document.getElementById("yes").addEventListener("click", function() {
+      alert("Anh biết mà, iu em 💖");
     });
   </script>
 </body>
