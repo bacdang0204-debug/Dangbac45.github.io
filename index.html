@@ -67,7 +67,10 @@
 </head>
 <body>
   <h1>Em đồng ý với anh là không buồn nữa nha 💖</h1>
-  <img id="cat" src="https://i.imgur.com/CiT2N6J.jpeg" alt="Cute Cat" />
+
+  <!-- Ảnh mèo mới đã cập nhật ở đây -->
+  <img id="cat" src="https://i.imgur.com/VHdOv8y.jpeg" alt="Sad Cute Cat" />
+
   <div class="btns">
     <button id="yes" onclick="alert('Anh biết mà 🥺')">Em đồng ý 🥰</button>
     <button id="no" onmouseover="moveButton()" onclick="moveButton()">Không 😢</button>
@@ -86,7 +89,6 @@
       btn.style.top = `${y}px`;
     }
 
-    // Tim bay
     function createHeart() {
       const heart = document.createElement('div');
       heart.classList.add('heart');
@@ -98,6 +100,7 @@
         heart.remove();
       }, 3000);
     }
+
     setInterval(createHeart, 300);
   </script>
 </body>
