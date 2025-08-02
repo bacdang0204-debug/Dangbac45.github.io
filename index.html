@@ -3,13 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Gửi em nè</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
     body {
       background: #ffd6e8;
       display: flex;
@@ -20,11 +14,18 @@
       font-family: 'Arial', sans-serif;
       text-align: center;
     }
+
     h1 {
       color: #e60073;
       font-size: 2.5rem;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
+
+    .buttons {
+      display: flex;
+      gap: 20px;
+    }
+
     button {
       padding: 10px 25px;
       font-size: 18px;
@@ -33,51 +34,4 @@
       color: #e60073;
       border-radius: 8px;
       cursor: pointer;
-      transition: 0.3s ease;
-    }
-    button:hover {
-      background-color: #e60073;
-      color: white;
-    }
-  </style>
-</head>
-<body>
-  <h1>E ơi đừng buồn vừa nha 💖</h1>
-  <button onclick="alert('Anh biết em sẽ vui lại mà 😊')">Okii luôn 🥺</button>
-</body>
-</html>
-    @keyframes fall {
-      0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(100vh) rotate(360deg);
-        opacity: 0;
-      }
-    }
-  </style>
-</head>
-<body>
-  <h1>E ơi đừng buồn vừa nha 💖</h1>
-  
-  <audio autoplay loop>
-    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-  </audio>
-
-  <script>
-    function createHeart() {
-      const heart = document.createElement("div");
-      heart.className = "heart";
-      heart.style.left = Math.random() * 100 + "vw";
-      document.body.appendChild(heart);
-
-      setTimeout(() => {
-        heart.remove();
-      }, 4000);
-    }
-
-    setInterval(createHeart, 300);
-  </script>
-</body>
-</html>
+      transition: all 0
